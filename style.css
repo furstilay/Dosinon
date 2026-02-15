@@ -1,0 +1,779 @@
+
+
+:root {
+    --orange: rgb(255, 114, 0);
+    --light-orange: rgb(203, 135, 98);
+    --very-light-gray: rgb(241, 242, 244);
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    touch-action: pan-y;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--very-light-gray);
+    min-height: 100vh;
+    width: 100%;
+}
+
+
+.big-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    background: radial-gradient(circle at center, #ffffff 0%, var(--very-light-gray) 100%);
+}
+.big-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(var(--orange) 1px, transparent 1px);
+    background-size: 24px 24px;
+    opacity: 0.5;
+    z-index: 0; 
+    pointer-events: none;
+}
+
+
+.big-container .header {
+    height: 12%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2%;
+    box-sizing: border-box;
+    background-color: transparent;
+}
+
+.big-container .header .logo-title {
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+}
+
+.big-container .header .logo-image {
+    height: 60%;
+    width: auto;
+    aspect-ratio: 1/1;
+}
+
+.big-container .header .logo-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.big-container .header .title {
+    font-family: 'Karantina', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    color: black;
+}
+
+.big-container .header .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 4px;
+    height: 80%;
+    width: 36%;
+    margin-left: 3%;
+}
+
+
+.big-container .header .menu a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: black;
+    border-radius: 12px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+/* אפקטHover שמתאים לצבע הכתום שלך */
+.big-container .header .menu a:hover {
+    cursor: pointer;
+    background-color: rgba(200, 200, 200, 0.2);
+}
+
+
+.big-container .container {
+    width: 100%;
+    height: 88%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.big-container .container .right-container {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+.big-container .container .right-container .text-container {
+    width: fit-content;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 15%;
+}
+
+.big-container .container .right-container .text-container h6 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: rgb(105, 105, 105);
+    margin: 0;
+}
+
+.big-container .container .right-container .text-container h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 900;
+    font-size: 3.2rem;
+    margin: 0;
+}
+.big-container .container .right-container .text-container .more-button {
+    width: 100%;
+    height: 6.4vh;
+    background-color: var(--orange);
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    box-sizing: border-box;
+    margin-top: 2vh;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: white;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+.big-container .container .right-container .text-container .more-button:hover {
+    color: var(--orange);
+    background-color: transparent;
+    border: 2px solid var(--orange);
+    cursor: pointer;
+}
+
+.big-container .container .right-container .text-container .more-button img {
+    height: 70%;
+    width: auto;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+.big-container .container .right-container .text-container .more-button:hover img {
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(360deg) brightness(101%) contrast(105%);
+}
+.social-proof {
+    margin-top: 4vh;
+    opacity: 0.7;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.5vw;
+}
+
+.proof-text {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.social-proof img {
+    width: 1.5vw;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
+.divider {
+    color: #ddd;
+    font-weight: 100;
+}
+
+.status {
+    color: #f57c00; /* צבע כתום שתואם למותג שלך אבל עדין יותר */
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.85rem;
+    border: 1px solid #f57c00;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+
+.big-container .container .left-container {
+    width: 40%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.left-container .hand-image {
+    width: auto;
+    height: 70%;
+    position: absolute;
+    left: -45%;
+    top: 0;
+    margin: 0;
+
+    transform-origin: bottom center;
+    animation: wave-hand 3s ease-in-out infinite;
+}
+@keyframes wave-hand {
+    0% {
+        transform: rotate(45deg);
+    }
+    50% {
+        /* הטיה קלה קדימה */
+        transform: rotate(55deg);
+    }
+    100% {
+        /* חזרה לנקודת ההתחלה */
+        transform: rotate(45deg);
+    }
+}
+
+.left-container .hand-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.big-container.half .rolling-text {
+    direction: ltr;
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    top: 5%;
+    background-color: white;
+    overflow: hidden;
+    color: var(--orange);
+    padding: 10px 0;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.marquee-text {
+    display: flex;
+    width: max-content; /* דואג שהדיב יהיה ארוך כמו הטקסט */
+    animation: rolling 17s linear infinite;
+}
+
+.marquee-text span {
+    direction: rtl;
+    padding-left: 50px; /* רווח בין סוף משפט לתחילת המשפט הבא */
+    font-size: 2rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+/* הגדרת האנימציה */
+@keyframes rolling {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* מזיזים את הטקסט בדיוק חצי מהמרחק (כי שכפלנו אותו ב-HTML) */
+        transform: translateX(-50%);
+    }
+}
+
+.big-container.half {
+    background: radial-gradient(var(--light-orange), var(--orange));
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.big-container.half .other-container {
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2% 0;
+    box-sizing: border-box;
+}
+
+.big-container.half .other-container p {
+    width: fit-content;
+    max-width: 70%;
+    overflow: hidden;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    text-align: justify;
+}
+
+.big-container.half .other-container p span:not(.mobile-break) {
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+.big-container.half .other-container p span.mobile-break {
+    display: none;
+}
+
+.big-container.half .other-container .scroll-container {
+    width: 90%;
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow: visible;
+    padding: 0 5%;
+    box-sizing: border-box;
+}
+
+.big-container.half .other-container .scroll-container .circle {
+    height: 80%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 4px solid white;
+    margin: 0;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.circle.one::before {
+    content: "בלי גמרא";
+}
+.circle.two::before {
+    content: "בלי בדיחות ביינישים";
+}
+.circle.three::before {
+    content: "בלי שיעורים";
+}
+.circle::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -135%);
+    z-index: 2;
+    pointer-events: none;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: rgba(250, 250, 250, 1);
+    white-space: nowrap;
+}
+.circle::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 102%; /* הקו צריך להיות ארוך יותר מהקוטר בגלל האלכסון */
+    height: 5px;  /* עובי הקו */
+    background-color: white;
+    transform: translate(-50%, -50%) rotate(45deg);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.big-container.half .other-container .scroll-container .circle img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    margin-bottom: 10%;
+    filter: brightness(0) invert(1);
+    z-index: 1;
+}
+
+.big-container.half .other-container .scroll-container .line {
+    width: 12%;
+    height: 4px;
+    background-color: white;
+    margin: 0;
+}
+
+
+.big-container.recoms {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+.big-container.recoms::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('image/recoms-background.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(4px); /* הטשטוש של התמונה */
+    opacity: 0.4;
+    z-index: 0;
+    transform: scale(1.1); /* מונע קצוות לבנים/שקופים בגלל הטשטוש */
+}
+
+.recom {
+    width: 40%;
+    height: 35%;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 0 2%;
+    box-sizing: border-box;
+    position: absolute;
+    gap: 3%;
+    transition: transform 0.5s ease-out; /* הופך את הבריחה לחלקה */
+    will-change: transform; /* משפר ביצועים */
+}
+.recom .recom-head {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    flex-shrink: 0;
+}
+.recom .recom-head .yeshiva-logo {
+    height: 75%;
+    width: auto;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+.recom .recom-head .name-yeshiva {
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+    margin-right: 2%;
+}
+.recom .recom-head .name-yeshiva .title {
+    margin: 0;
+    font-weight: 900;
+    font-size: 1.4rem;
+}
+.recom .recom-head .name-yeshiva .yeshiva {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1rem;
+    color: rgb(117, 117, 117);
+}
+.recom .recom-head .stars {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+.recom .recom-head .stars img {
+    width: auto;
+    height: 40%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+.recom p {
+    width: 100%;
+    height: 70%;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    margin: 0;
+}
+.recom p span {
+    font-weight: 900;
+    font-size: 1.1rem;
+}
+
+.recom.one {
+    top: 10%;
+    right: 7%;
+    rotate: 5deg;
+}
+.recom.four {
+    top: 20%;
+    left: 12%;
+    rotate: -3deg;
+}
+.recom.three {
+    bottom: 15%;
+    left: 7%;
+    rotate: 5deg;
+    z-index: 5;
+}
+.recom.two {
+    bottom: 20%;
+    right: 12%;
+    rotate: -8deg;
+    z-index: 6;
+}
+
+
+.big-container.two {
+    background-color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#starfield {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.big-container.two .install-container {
+    width: 30vw;
+    height: 30vw;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    z-index: 5;
+}
+
+.big-container.two .install-container h5 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin: 0;
+    color: rgb(84, 84, 84);
+}
+
+.big-container.two .install-container .install-grid {
+    flex-shrink: 0;
+    margin: 0;
+    width: 25vw;
+    height: 25vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    row-gap: 1vw;
+    column-gap: 1vw;
+}
+
+.square {
+    background-color: transparent;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    aspect-ratio: 1 / 1; 
+    transition: all 0.2s ease;
+    padding: 20%;
+    border: 2px solid var(--orange);
+}
+
+.square img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(360deg) brightness(101%) contrast(105%);
+    pointer-events: none;
+}
+
+.square:hover {
+    transform: scale(1.05);
+    background-color: var(--orange);
+    cursor: pointer;
+}
+
+.square:hover img {
+    filter: brightness(0) invert(1);
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+    .body {
+        width: 100%;
+        overflow: hidden;
+    }
+    .big-container {
+        height: 77vh;
+    }
+    .big-container .header .menu {
+        display: none;
+    }
+
+    .big-container .container {
+        flex-direction: column;
+    }
+
+    .big-container .container .left-container {
+        width: 100%;
+        overflow: hidden;
+        display: none;
+    }
+    .big-container .container .left-container .hand-image {
+        margin-left: 10%;
+        left: -55%;
+    }
+
+    .big-container .container .right-container {
+        width: 100%;
+        margin-top: 12%;
+    }
+    .big-container .container .right-container .text-container {
+        width: 80%;
+    }
+    .big-container .container .right-container .text-container h1 {
+        font-size: 2.6rem;
+    }
+    .big-container .container .right-container .text-container .social-proof {
+        gap: 1vw;
+    }
+    .big-container .container .right-container .text-container .social-proof .logos img {
+        width: 4vw;
+    }
+
+
+
+    .big-container.half {
+        height: 85vh;
+    }
+    .big-container.half .other-container p {
+        height: fit-content;
+        font-size: 1.2rem;
+        max-width: 100%;
+        width: 85%;
+        text-align: center;
+        margin: 0;
+        margin-top: 2%;
+    }
+    .big-container.half .other-container p span.mobile-break {
+        display: inline;
+    }
+    .big-container.half .other-container p span.last-line {
+        font-size: 1.1rem;
+    }
+
+    .big-container.half .other-container .scroll-container {
+        height: 25%;
+        padding: 0;
+        gap: 3%;
+        margin-bottom: 10%;
+    }
+
+    .big-container.half .other-container .scroll-container .circle::before {
+        font-size: 0.8rem;
+    }
+
+    .big-container.recoms {
+        height: 130vh;
+        justify-content: space-evenly;
+    }
+
+    .big-container.recoms .recom{
+        width: 85%;
+        height: 22%;
+        position: static;
+        margin: 0;
+    }
+    .big-container.recoms .recom .recom-head .name-yeshiva .title {
+        font-size: 1rem;
+    }
+    .big-container.recoms .recom .recom-head .name-yeshiva .yeshiva {
+        font-size: 0.8rem;
+    }
+    .big-container.recoms .recom p {
+        font-size: 0.8rem;
+    }
+    .big-container.recoms .recom.one {
+        rotate: 2deg;
+    }
+    .big-container.recoms .recom.two {
+        rotate: -2deg;
+    }
+    .big-container.recoms .recom.three {
+        rotate: 2deg;
+    }
+    .big-container.recoms .recom.four {
+        rotate: -3deg;
+    }
+    
+    .big-container.two {
+        height: 80vh;
+    }
+    .big-container.two .install-container {
+        width: 85vw;
+        height: 85vw;
+    }
+    .big-container.two .install-container h5 {
+        font-size: 1.2rem;
+    }
+    .big-container.two .install-container .install-grid {
+        flex-shrink: 0;
+        flex-grow: 0;
+        width: 80vw;
+        height: 80vw;
+        
+    }
+    .square {
+        border-radius: 24px;
+        width: 50%;
+        height: 50%;
+    }
+}
