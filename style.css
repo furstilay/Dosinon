@@ -387,6 +387,11 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
+    scale: 1;
+    transition: all 0.3s ease;
+}
+.big-container.half .other-container .scroll-container .circle:hover {
+    scale: 1.2;
 }
 .circle.one::before {
     content: "בלי גמרא";
@@ -599,6 +604,11 @@ body {
     font-size: 1.4rem;
     margin: 0;
     color: rgb(84, 84, 84);
+    scale: 1;
+    transition: all 0.3s ease;
+}
+.big-container.two .install-container h5:hover {
+    scale: 1.2;
 }
 
 .big-container.two .install-container .install-grid {
